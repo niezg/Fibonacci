@@ -15,10 +15,12 @@ namespace Fibonacci
 
             return GetNMemberRecursion(n - 2) + GetNMemberRecursion(n - 1);
         }
+
         public static ulong GetNMemberNormal(int n)
         {
             return ulong.Parse(GetFibListNormal(n).Last());
         }
+
         public static ulong GetNMember(int n, bool recursion = false)
         {
             if (recursion)
@@ -26,6 +28,7 @@ namespace Fibonacci
             else
                 return GetNMemberNormal(n);
         }
+
         private static List<string> GetFibListNormal(int n)
         {
             var fibList = new List<string>(){ "0", "1" };
@@ -43,6 +46,7 @@ namespace Fibonacci
 
             return fibList;
         }
+
         private static List<string> GetFibListRecursion(int n)
         {
             var fibList = new List<string>() {};
@@ -54,6 +58,7 @@ namespace Fibonacci
 
             return fibList;
         }
+
         private static List<string> GetFibList(int n, bool recursion)
         {
             if (recursion)
@@ -61,11 +66,13 @@ namespace Fibonacci
             else
                 return GetFibListNormal(n);
         }
+
         public static void Print(int n, bool recursion = false)
         {
    
             Console.WriteLine(string.Join(" ", GetFibList(n, recursion)));
         }
+
         public static void PrintNMember(int n, bool recursion = false)
         {
 
